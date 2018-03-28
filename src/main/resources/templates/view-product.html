@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>show to buy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td>id</td>
+			<td>name</td>
+			<td>category</td>
+			<td>price</td>
+		</tr>
+		<tr th:each="pro : ${product}">
+			<td th:text=${pro.id}></td>
+			<td th:text=${pro.name}></td>
+			<td th:text=${pro.category}></td>
+			<td th:text="${pro.price_range}"></td>
+		</tr>
+		
+
+
+	</table>
+<br></br>
+<form method ="post"  action="#" th:action="@{/buy-products}" th:object="${input}">
+	
+			quantity:<input type = "text" th:field="*{in}">
+			<br></br>
+			
+			
+ <input type ="submit" value = "BUY">
+
+   </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1256">
+<title>Stores</title>
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td>id</td>
+			<td>name</td>
+			<td>owner</td>
+			<td>type</td>
+		</tr>
+		<tr th:each="store : ${stores}">
+			<td th:text=${store.id}></td>
+			<td th:text=${store.name}></td>
+			<td th:text=${store.owner_username}></td>
+			<td th:text=${store.type}></td>
+		</tr>
+	
+	</table>
+	
+	<form method ="post"  action="#" th:action="@{/select-stores}" th:object="${input}">
+	
+			id:<input type = "text" th:field="*{in}">
+			<br>
+ <input type ="submit" value = "submit">
+
+   </form>	
+	
+</body>
+</html>

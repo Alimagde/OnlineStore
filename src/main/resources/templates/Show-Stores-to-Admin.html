@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>add Brand</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td>id</td>
+			<td>name</td>
+			<td>owner</td>
+			<td>type</td>
+		</tr>
+		<tr th:each="store : ${stores}">
+			<td th:text=${store.id}></td>
+			<td th:text=${store.name}></td>
+			<td th:text=${store.owner_username}></td>
+			<td th:text=${store.type}></td>
+		</tr>
+	
+	</table>
+</body>
+</html>
