@@ -94,9 +94,9 @@ public class Admin_controller {
 	public String showStores(Model model){
 		Iterable<Store> temp=srepo.findAll();
 		List<Store> arr=new ArrayList();
-		for(Store store : temp) {
-			arr.add(store);
-		}
+			for(Store store : temp) {
+				arr.add(store);
+			}
 		model.addAttribute("stores", arr);
 		return "Show-Stores-to-Admin";
 	}

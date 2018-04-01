@@ -41,7 +41,7 @@ public String register(Model model,@ModelAttribute User user) {
 
 @GetMapping("/log-in")
 public String show_log_in_form(Model model) {
-model.addAttribute("user", new User())	;
+model.addAttribute("user", new User());
 return	"log-in";
 }
 
@@ -59,7 +59,9 @@ public String log_in(Model model,@ModelAttribute User user) {
 		if(arr.get(i).getUsername().equals(user.getUsername())) {
 			if(arr.get(i).getPassword().equals(user.getPassword())) {
 				if(arr.get(i).getType().equals("buyer")) {
-					return "log-in";
+					System.out.println("logged");
+					model.addAttribute("input",new Input());
+					return "show_stores_to_user";
 				}
 				else if(arr.get(i).getType().equals("store owner")) {
 					return "add-store";
