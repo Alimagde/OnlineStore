@@ -25,7 +25,8 @@ public class store_owner_controller implements Serializable {
 	@Autowired
 	products_in_store_repo p_s_repo;
 	
-
+	@Autowired
+	collab_repo c_repo;
 	
 	@GetMapping("/add-store")
 	public String show_add_store_form(Model model) {
@@ -106,6 +107,25 @@ public class store_owner_controller implements Serializable {
 		
 		
 	}
+	
+	@GetMapping("/add-collab")
+	String add_collab(Model model) {
+		
+		model.addAttribute("collab", new collab());
+		return	"add-collab";
+		
+		
+	}
+	@PostMapping("/add-collaborator")
+	public String add_collaborator(Model model,@ModelAttribute collab collaborator) {
+		
+		
+		c_repo.save(collaborator);
+		
+		return "store_owner_main";
+
+	}
+	
 
 	
 }

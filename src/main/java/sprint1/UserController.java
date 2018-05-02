@@ -139,7 +139,7 @@ public String view_store_products(Model model ,@ModelAttribute Input input) {
 
 
 
-@GetMapping("/view-products")
+@PostMapping("/view-products")
 public String view_to_buy(Model model,@ModelAttribute Input input) {
 Iterable<products_in_stores> p_s_temp=p_s_repo.findAll();
 List<products_in_stores> products=new ArrayList();
