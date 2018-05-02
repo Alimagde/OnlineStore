@@ -1,7 +1,15 @@
 package sprint1;
 
 public class Input {
-	String in , in2;
+	String in , in2,in3;
+
+	public String getIn3() {
+		return in3;
+	}
+
+	public void setIn3(String in3) {
+		this.in3 = in3;
+	}
 
 	public String getIn() {
 		return in;

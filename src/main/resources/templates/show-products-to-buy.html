@@ -12,15 +12,14 @@
 			<td>category</td>
 			<td>price</td>
 		</tr>
-		<tr th:each="pro : ${product}">
-			<td th:text=${pro.id}></td>
+		<tr th:each="pro : ${products}">
 			<td th:text=${pro.name}></td>
-			<td th:text=${pro.category}></td>
-			<td th:text="${pro.price_range}"></td>
+			<td th:text=${pro.quantity}></td>
+			<td th:text="${pro.price}"></td>
 		</tr>
 	</table>
 	<br></br>
-	<form method ="post"  action="#" th:action="@{/select-products}" th:object="${input}">
+	<form method ="post"  action="#" th:action="@{/view-products}" th:object="${input}">
 	
 			id:<input type = "text" th:field="*{in}">
 			<br>

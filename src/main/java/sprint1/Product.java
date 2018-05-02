@@ -11,7 +11,7 @@ private
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
 Integer id;
-Integer amount=0;
+Integer amount=0;//system amount
 Integer views=0,buys=0;
 public Integer getBuys() {
 	return buys;
@@ -21,7 +21,7 @@ public void setBuys(Integer buys) {
 }
 String name="",category="";
 String price_range="";
-Integer quantity=0;
+Integer quantity=0; //store
 
 public Product() {}
 public Product(Integer id, String name, String category, String price_range) {
@@ -84,6 +84,9 @@ public void equal(Product p) {
 	this.id=p.getId();
 	this.price_range=p.getPrice_range();
 	this.quantity=p.getQuantity();
+	this.amount=p.getAmount();
+	this.buys=p.getBuys();
+	this.views=p.getViews();
 	
 }
 

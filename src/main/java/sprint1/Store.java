@@ -16,14 +16,11 @@ Integer id;
 String name="",type="",category="",owner_username="",state="";
 Integer views=0;
 
-
-ArrayList<Product> products = new ArrayList<>();
-
 public Store() {}
 
 public String getState() {
 	return state;
-}
+}	
 
 public void setState(String state) {
 	this.state = state;
@@ -99,6 +96,9 @@ public void equal(Store s) {
 	this.name=s.getName();
 	this.type=s.getType();
 	this.state=s.get_state();
+	this.views=s.getViews();
+	this.owner_username=s.getOwner_username();
+
 	
 }
 

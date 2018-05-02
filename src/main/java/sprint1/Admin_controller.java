@@ -52,7 +52,7 @@ public class Admin_controller {
 		model.addAttribute("input",new Input());
 		model.addAttribute("stores", arr2);
 
-		return	"Show_Stores_to_Admin";
+		return	"Show-Stores-to-Admin";
 	}
 	
 	
@@ -86,20 +86,11 @@ public class Admin_controller {
 		s.set_state("verified");
 		srepo.save(s);
 
-		return "show_stores_to_admin";
-	}
-
-
-	@GetMapping("/Show-Stores-to-Admin")
-	public String showStores(Model model){
-		Iterable<Store> temp=srepo.findAll();
-		List<Store> arr=new ArrayList();
-			for(Store store : temp) {
-				arr.add(store);
-			}
-		model.addAttribute("stores", arr);
 		return "Show-Stores-to-Admin";
 	}
+
+
+//	
 	
 	@GetMapping("/add-brand")
 	public String show_add_brand_form(Model model) {
@@ -113,6 +104,16 @@ public class Admin_controller {
 		return "add-brand";
 
 	}
+//	@GetMapping("/Show-Stores-to-Admin")
+//	public String showStores(Model model){
+//		Iterable<Store> temp=srepo.findAll();
+//		List<Store> arr=new ArrayList();
+//			for(Store store : temp) {
+//				arr.add(store);
+//			}
+//		model.addAttribute("stores", arr);
+//		return "Show-Stores-to-Admin";
+//	}
 	
 //	@GetMapping("/Show-product-to-owner")
 //	public String showproduct(Model model){

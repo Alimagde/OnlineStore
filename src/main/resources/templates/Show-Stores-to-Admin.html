@@ -21,5 +21,14 @@
 		</tr>
 	
 	</table>
+<form method ="post"  action="#" th:action="@{/add}" th:object="${input}">
+store_ID : <input type ="text" th:field="*{in}">
+<br>
+
+<input type ="submit" value ="submit">
+
+
+
+</form>	
 </body>
 </html>

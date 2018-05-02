@@ -11,21 +11,27 @@
 			<td>name</td>
 			<td>category</td>
 			<td>price</td>
+			<td>amount</td>
+			
 		</tr>
 		<tr th:each="pro : ${product}">
 			<td th:text=${pro.id}></td>
 			<td th:text=${pro.name}></td>
 			<td th:text=${pro.category}></td>
 			<td th:text="${pro.price_range}"></td>
+			<td th:text="${pro.amount}"></td>
+			
 		</tr>
 	
 	</table>
 	
 	
 <form method ="post"  action="#" th:action="@{/add-product-to-store}" th:object="${input}">
-product_ID : <input type ="text" th:field="*{in}">
+product ID : <input type ="text" th:field="*{in}">
 <br>
-owner_ID : <input type ="text" th:field="*{in2}">
+store ID: <input type ="text" th:field="*{in2}">
+<br>
+amount: <input type ="text" th:field="*{in3}">
 <br>
 <input type ="submit" value ="submit">
 
